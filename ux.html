@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Data Presentation</title>
+  <style>
+    /* CSS for styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .chart-container {
+      width: 100%;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Capital Structure Before Round</h2>
+    <table>
+      <thead>
+        <tr>
+            <th>Founders</th>
+            <th>Date</th>
+            <th>Nos</th>
+            <th>% Stake Pre</th>
+            <th>Last Valuation</th>
+          </tr>
+          <tr>
+            <td>W S Ravi Shankar, Atul Singhal</td>
+            <td>25 Jul, 2016</td>
+            <td>18000</td>
+            <td>1.30%</td>
+            <td>9,99212</td>
+          </tr>
+          <tr>
+            <td>Atul Jain Business</td>
+            <td>2 Nov, 2013</td>
+            <td>984</td>
+            <td>0.07%</td>
+            <td>656</td>
+          </tr>
+          <tr>
+            <td>Cartikeya Reddy, Paritosh Wali, Upendra Kamalapuri, H S Nagaraja, Balakrishna Adiga, Accel Growth III FVCI (Mauritius) LTD</td>
+            <td>25 Jul, 2016</td>
+            <td>4330</td>
+            <td>0.012%</td>
+            <td>9,99212</td>
+          </tr>
+          <tr>
+            <td>Accel India</td>
+            <td>24 Jan, 2011</td>
+            <td>492.27%</td>
+            <td>0.279%</td>
+            <td>1,364,452</td>
+          </tr>
+        </table>
+      
+        <h2>Capital Structure After This Round</h2>
+        <table>
+          <tr>
+            <th>Founders</th>
+            <th>Date</th>
+            <th>Nos</th>
+            <th>% Stake Post</th>
+            <th>Post Valuation</th>
+          </tr>
+          <tr>
+            <td>W S Ravi Shankar, Atul Singhal</td>
+            <td>25 Jul, 2016</td>
+            <td>18000</td>
+            <td>1.293%</td>
+            <td>9,99212</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </table>
+      
+        <h2>Amt Invested</h2>
+        <table>
+          <tr>
+            <th>Date</th>
+            <th>Amount</th>
+          </tr>
+          <tr>
+            <td>25 Jul, 2016</td>
+            <td>304730.00%</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </table>
+      
+        <h2>% Return</h2>
+        <table>
+          <tr>
+            <th>Date</th>
+            <th>% Return</th>
+          </tr>
+          <tr>
+            <td>25 Jul, 2016</td>
+            <td>18328</td>
+          </tr>
+      </thead>
+      <tbody>
+        <!-- Populate table rows dynamically with JavaScript -->
+      </tbody>
+    </table>
+   
+  </div>
+
+  <!-- JavaScript for data manipulation and visualization -->
+  <script>
+    // JavaScript code to fetch data and populate the table and charts
+    // Replace this with your actual data fetching and processing logic
+    // Example:
+    // const financialData = fetchFinancialData(); // Function to fetch financial data from backend
+    // populateTable(financialData);
+    // createAmountInvestedChart(financialData);
+    // createPercentageReturnChart(financialData);
+
+    // Example function to populate table with data
+    function populateTable(data) {
+      const tbody = document.querySelector('tbody');
+      data.forEach(row => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${row.date}</td>
+          <td>${row.founders}</td>
+          <td>${row.nos}</td>
+          <td>${row.stakePre}</td>
+          <td>${row.lastValuation}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Example function to create amount invested chart
+    function createAmountInvestedChart(data) {
+      // Code to create chart using library like Chart.js
+      // Example:
+      // const ctx = document.getElementById('amount-invested-chart').getContext('2d');
+      // const chart = new Chart(ctx, {
+      //   type: 'bar',
+      //   data: {
+      //     // Data configuration
+      //   },
+      //   options: {
+      //     // Chart options
+      //   }
+      // });
+    }
+
+    // Example function to create percentage return chart
+    function createPercentageReturnChart(data) {
+      // Code to create chart using library like Chart.js
+      // Example:
+      // const ctx = document.getElementById('percentage-return-chart').getContext('2d');
+      // const chart = new Chart(ctx, {
+      //   type: 'line',
+      //   data: {
+      //     // Data configuration
+      //   },
+      //   options: {
+      //     // Chart options
+      //   }
+      // });
+    }
+
+    // Execute functions to populate table and create charts
+    // Replace this with your actual function calls
+    populateTable([
+      { date: '25 Jul, 2016', founders: 'W S Ravi Shankar, Atul Singhal', nos: 18000, stakePre: '1.30%', lastValuation: '9,99212' },
+      // Add more rows as needed
+    ]);
+    // createAmountInvestedChart(data);
+    // createPercentageReturnChart(data);
+  </script>
+</body>
+</html>
